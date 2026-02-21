@@ -30,6 +30,9 @@ source .venv/bin/activate
 uv pip install .
 ```
 
+## Model
+- I used `ollama_chat/qwen3:8b`, but if you prefer a more robust model, simply override the models inside `CodeGenAgent/config/settings.py`.
+
 ## Project layout
 
 Top-level files and folders:
@@ -45,7 +48,7 @@ Top-level files and folders:
 | Agent | Role |
 |---|---|
 | Root Agent | Coordinates the overall workflow, aggregates results, and returns the final output to the user. |
-| LeetCodeResearcherAgent | Researches ambiguous queries, proposes interpretations, and lists edge cases and requirements. |
+| LeetCodeResearcherAgent | Researches ambiguous queries, proposes interpretations, and lists edge cases and requirements using `web_search_options`. |
 | DevelopmentPhase | Sequences work into concrete development steps, manages iterations, and orchestrates agent handoffs. |
 | ProgrammerAgent | Writes the implementation according to the clarified specification of the LeetCodeResearcherAgent. |
 | ExecutorAgent | Runs produced code of Programmeragent in a sandbox, captures outputs, and provides execution logs for analysis. |
