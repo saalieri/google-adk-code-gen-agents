@@ -30,6 +30,19 @@ source .venv/bin/activate
 uv pip install .
 ```
 
+4. Run
+
+```bash
+adk run CodeGenAgent
+```
+
+5. Sample
+
+```bash
+Running agent root_agent, type exit to exit.
+[user]: create a code that solve add and even number.
+```
+
 ## Model
 - I used `ollama_chat/qwen3:8b`, but if you prefer a more robust model, simply override the models inside `CodeGenAgent/config/settings.py`.
 
